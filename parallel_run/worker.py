@@ -3,7 +3,6 @@ Module to hold the services required for api hits
 """
 
 
-import random
 import time
 import threading
 
