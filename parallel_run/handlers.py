@@ -2,6 +2,7 @@
 Module to hold different types of search request handlers.
 """
 
+import base64
 import json
 import oauth2 as oauth
 import socket
@@ -40,7 +41,7 @@ class BaseHandler(object):
         url = self.generate_uri()
         response = {
             self.handler: {
-                "url": url,
+                "url": base64.b64encode(bytes(url, "utf-8")).decode("utf-8"),
             }
         }
 
